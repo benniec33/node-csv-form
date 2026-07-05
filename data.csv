@@ -2,6 +2,9 @@ first_name,last_name
 Jim,Test
 bob,smith
 earl,sandwich
+<<<<<<< HEAD
 bobby,jones
 fred,flintstone
 go,go
+=======
+>>>>>>> 61c91b0c4ded63d32966b9100d5c4131734c2650
