@@ -1,0 +1,9 @@
+{
+  "name": "node-csv-form",
+  "version": "1.0.0",
+  "description": "Simple Node.js form that saves names to CSV",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
