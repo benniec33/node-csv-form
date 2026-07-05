@@ -186,7 +186,7 @@ const server = http.createServer((req, res) => {
         const { firstName, lastName } = JSON.parse(body);
         const line = `${firstName},${lastName}\n`;
         fs.appendFileSync(CSV_FILE, line);
-        sendJson(res, { success: true, message: 'Saved successfully.' });
+        sendJson(res, { success: true, message: 'Record saved successfully.' });
       } catch (error) {
         sendJson(res, { success: false, message: 'Failed to save.' });
       }
