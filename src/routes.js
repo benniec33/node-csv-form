@@ -1,14 +1,26 @@
+const fs = require('fs');
+const path = require('path');
 const { URL } = require('url');
 const { sendHtml, sendJson } = require('./http');
-const { getHtml } = require('./html');
 const { readCsv, appendCsvRecord } = require('./csvStore');
+const { ROOT } = require('./config');
 
 function createRequestHandler() {
   return (req, res) => {
     const parsedUrl = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
 
     if (req.method === 'GET' && parsedUrl.pathname === '/') {
-      sendHtml(res, getHtml());
+      const htmlPath = path.join(ROOT, 'public', 'index.html');
+      const html = fs.readFileSync(htmlPath, 'utf8');
+      sendHtml(res, html);
+      return;
+    }
+
+    if (req.method === 'GET' && parsedUrl.pathname === '/src/reactApp.js') {
+      const appPath = path.join(ROOT, 'src', 'reactApp.js');
+      const appSource = fs.readFileSync(appPath, 'utf8');
+      res.writeHead(200, { 'Content-Type': 'application/javascript; charset=utf-8' });
+      res.end(appSource);
       return;
     }
 
