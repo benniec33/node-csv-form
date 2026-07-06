@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
   "name": "node-csv-form",
   "version": "1.0.0",
@@ -8,14 +7,3 @@
     "start": "node server.js"
   }
 }
-=======
-{
-  "name": "node-csv-form",
-  "version": "1.0.0",
-  "description": "Simple Node.js form that saves names to CSV",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  }
-}
->>>>>>> 61c91b0c4ded63d32966b9100d5c4131734c2650
